@@ -1,4 +1,3 @@
-[![Build Status](https://drone6.docsthat.work/api/badges/imchairmanm/hello_hapi/status.svg)](https://drone6.docsthat.work/imchairmanm/hello_hapi)
 
 # Hello
 
