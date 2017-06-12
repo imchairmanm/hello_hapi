@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo trying to run npm install...'
+                echo 'trying to run npm install...'
                 sh 'npm install'
             }
         }
         stage('test') {
             steps {
-                sh 'echo trying to run npm test...'
+                echo 'trying to run npm test...'
                 sh 'npm test'
             }
         }
