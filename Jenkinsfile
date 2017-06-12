@@ -6,6 +6,7 @@ pipeline {
                 sh 'echo trying to run npm install...'
                 sh 'npm install'
             }
+        }
         stage('test') {
             steps {
                 sh 'echo trying to run npm test...'
