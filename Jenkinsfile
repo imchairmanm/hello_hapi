@@ -6,6 +6,7 @@ pipeline {
         docker {
             image 'node'
             args '-u 0:0'
+        }
     }
 
     stages {
