@@ -13,10 +13,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'pwd'
-                sh 'ls -l'
-                sh 'echo $USER'
-                sh 'whoami'
                 sh 'npm install'
             }
         }
@@ -24,11 +20,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'npm test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
             }
         }
     }
