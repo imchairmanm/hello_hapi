@@ -8,6 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                sh 'pwd'
+                sh 'ls -l'
                 sh 'npm install'
             }
         }
