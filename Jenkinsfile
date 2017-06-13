@@ -2,7 +2,11 @@
 
 pipeline {
 
-    agent { docker 'node' }
+    agent {
+        docker {
+            image 'node'
+            args '-u 0:0'
+    }
 
     stages {
         stage('Build') {
@@ -10,6 +14,8 @@ pipeline {
                 echo 'Building...'
                 sh 'pwd'
                 sh 'ls -l'
+                sh 'echo $USER'
+                sh 'whoami'
                 sh 'npm install'
             }
         }
