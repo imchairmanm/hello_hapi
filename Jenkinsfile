@@ -13,8 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'whoami'
-                sh 'pwd'
+                sh(returnStdout: true, script: 'pwd').trim()
             }
         }
         stage('Test') {
