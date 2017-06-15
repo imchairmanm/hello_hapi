@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'node'
-            args '--user root'
+            args '--user jenkins'
         }
     }
 
