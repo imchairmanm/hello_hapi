@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                pwd ''
+                sh 'pwd'
             }
         }
         stage('Test') {
