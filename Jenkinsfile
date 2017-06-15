@@ -13,8 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                PWD = sh(returnStdout: true, script: 'pwd').trim()
-                echo 'pwd: ${PWD}'
+                pwd
             }
         }
         stage('Test') {
