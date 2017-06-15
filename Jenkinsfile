@@ -5,6 +5,7 @@ pipeline {
     agent {
         docker {
             image 'node'
+            args '--user root'
         }
     }
 
@@ -12,13 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'sudo npm install'
+                sh 'npm install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'sudo npm test'
+                sh 'npm test'
             }
         }
     }
