@@ -5,7 +5,8 @@ pipeline {
     agent {
         docker {
             image 'node'
-            args '-u 0:0'
+            #args '-u 0:0'
+            args '--user node'
         }
     }
 
