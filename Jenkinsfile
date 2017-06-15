@@ -13,10 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'whoami'
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'npm install'
+                sh 'whoami && pwd && npm install'
             }
         }
         stage('Test') {
