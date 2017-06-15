@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'node'
-            args '--user node:116'
+            args '--user root'
         }
     }
 
