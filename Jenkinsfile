@@ -13,7 +13,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh(returnStdout: true, script: 'pwd').trim()
+                sh {
+                    returnStdout: true,
+                    script: 'pwd'
+                }
             }
         }
         stage('Test') {
