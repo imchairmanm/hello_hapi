@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+
+inputs:
+  - name: hello_hapi
+
+outputs:
+  - name: hello_hapi_with_dependencies
+
+run:
+  path: hello_hapi/ci/scripts/install_dependencies.sh

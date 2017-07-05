@@ -1,0 +1,36 @@
+---
+resources:
+  - name: hello_hapi
+    type: git
+    source: &repo-source
+      uri: https://github.com/imchairmanm/hello_hapi
+      branch: master
+  - name: dependency-cache
+    type: npm-cache
+    source:
+      <<: *repo-source
+      paths:
+        - package.json
+      
+jobs:
+  - name: Install dependencies
+    plan:
+      - get: dependency-cache
+      - get: hello_hapi
+        trigger: true
+      #- task: download dependencies
+      #  file: hello_hapi/ci/tasks/install_dependencies.yml
+  - name: Run tests
+    plan:
+      - get: hello_hapi
+        trigger: true
+        passed: [Install dependencies]
+      - task: run the test suite
+        file: hello_hapi/ci/tasks/run_tests.yml
+
+resource_types:
+  - name: npm-cache
+    type: docker-image
+    source:
+      repository: ymedlop/npm-cache-resource
+      tag: latest
