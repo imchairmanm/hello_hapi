@@ -9,7 +9,7 @@ image_resource:
 
 inputs:
   - name: hello_hapi
-  - name: npm-cache
+  - name: dependency-cache
   #- name: hello_hapi_with_dependencies
 
 run:

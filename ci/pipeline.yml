@@ -22,6 +22,7 @@ jobs:
       #  file: hello_hapi/ci/tasks/install_dependencies.yml
   - name: Run tests
     plan:
+      - get: dependency-cache
       - get: hello_hapi
         trigger: true
         passed: [Install dependencies]
